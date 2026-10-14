@@ -1,0 +1,8 @@
+[
+ {"arn":"arn:aws:iam::111122223333:role/ci-deployer","policies":[{"Statement":[
+   {"Effect":"Allow","Action":["s3:*","ec2:RunInstances","iam:PassRole","cloudformation:*"],"Resource":"*"}]}]},
+ {"arn":"arn:aws:iam::111122223333:role/report-reader","policies":[{"Statement":[
+   {"Effect":"Allow","Action":["s3:GetObject","s3:ListBucket"],"Resource":["arn:aws:s3:::reports","arn:aws:s3:::reports/*"]}]}]},
+ {"arn":"arn:aws:iam::111122223333:user/legacy-admin","policies":[{"Statement":[
+   {"Effect":"Allow","Action":"*","Resource":"*"}]}]}
+]

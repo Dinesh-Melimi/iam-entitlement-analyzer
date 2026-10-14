@@ -1,0 +1,7 @@
+{"Records":[
+ {"eventSource":"s3.amazonaws.com","eventName":"PutObject","userIdentity":{"arn":"arn:aws:iam::111122223333:role/ci-deployer"}},
+ {"eventSource":"cloudformation.amazonaws.com","eventName":"CreateStack","userIdentity":{"arn":"arn:aws:iam::111122223333:role/ci-deployer"}},
+ {"eventSource":"s3.amazonaws.com","eventName":"GetObject","userIdentity":{"arn":"arn:aws:iam::111122223333:role/report-reader"}},
+ {"eventSource":"s3.amazonaws.com","eventName":"ListBucket","userIdentity":{"arn":"arn:aws:iam::111122223333:role/report-reader"}},
+ {"eventSource":"sts.amazonaws.com","eventName":"GetCallerIdentity","userIdentity":{"arn":"arn:aws:iam::111122223333:user/legacy-admin"}}
+]}
