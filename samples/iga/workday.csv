@@ -1,0 +1,4 @@
+native_id,identity_key,display_name,status,entitlements
+E1001,e1001,Alice Nguyen,active,
+E1002,e1002,Bob Carter,active,
+E1003,e1003,Carla Diaz,terminated,

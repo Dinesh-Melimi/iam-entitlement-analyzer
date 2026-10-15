@@ -1,4 +1,4 @@
-from iam_analyzer.core import analyze, allows, escalation_risks, load
+from iam_analyzer.core import allows, analyze, escalation_risks, load
 
 
 def report():

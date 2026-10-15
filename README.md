@@ -9,6 +9,27 @@ Most AWS roles hold far more permission than they use. This tool compares what e
 
 It also ships **OPA/Rego guardrails** (`policies/iam_guardrails.rego`) that block risky IAM policies in CI before they reach an account. This is the same idea CIEM tools like Wiz apply at scale.
 
+## Identity governance (IGA) lifecycle
+
+Beyond cloud IAM, the `iga` module models the identity-governance lifecycle that platforms such as **SailPoint IdentityIQ** run (built in plain Python to demonstrate the concepts; it is not the SailPoint product):
+
+- **Aggregation**: pull accounts from multiple sources (Workday / Active Directory / LDAP / apps)
+- **Correlation**: tie target accounts to a single HR identity; surface **orphan** accounts with no owner
+- **Lifecycle**: flag terminated identities that still hold active accounts (deprovisioning gaps)
+- **Access certification**: build a review campaign (one item per identity-entitlement), record certify/revoke decisions, emit revocation work items and **audit evidence** (completion %, counts)
+- **Segregation of duties**: detect toxic entitlement combinations (e.g. create vendor + release payment)
+
+```bash
+iam-analyzer --iga workday=samples/iga/workday.csv active_directory=samples/iga/active_directory.csv   finance_app=samples/iga/finance_app.csv --sod samples/iga/sod_rules.json --campaign CERT-2026Q4
+```
+
+```
+Orphan accounts (no identity): ['active_directory:svc-legacy']
+  LIFECYCLE e1003 (Carla Diaz): active accounts after termination -> active_directory:cdiaz
+  SoD e1002 (Bob Carter): create vs approve invoices -> AP-Processors + AP-Approvers
+Certification campaign CERT-2026Q4: 8 review items (pending)
+```
+
 ## Run
 
 ```bash

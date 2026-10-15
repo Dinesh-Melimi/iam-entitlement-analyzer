@@ -1,0 +1,5 @@
+native_id,identity_key,display_name,status,entitlements
+anguyen,e1001,Alice Nguyen,active,Domain Users;Finance-RW
+bcarter,e1002,Bob Carter,active,Domain Users;AP-Approvers;AP-Processors
+cdiaz,e1003,Carla Diaz,active,Domain Users;Finance-RW
+svc-legacy,e9999,Service Legacy,active,Domain Admins

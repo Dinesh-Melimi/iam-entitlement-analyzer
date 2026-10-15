@@ -1,0 +1,4 @@
+[
+ {"name":"AP SoD: create vs approve invoices","left":"active_directory:AP-Processors","right":"active_directory:AP-Approvers"},
+ {"name":"Finance SoD: create vendor vs release payment","left":"finance_app:vendor-create","right":"finance_app:payment-release"}
+]
